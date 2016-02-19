@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta charset="utf-8">
+    <title>load image with JavaScript</title>
+    <style>
+      .image-frame img {
+        height: 300px;
+        width: 400px;
+      }
+    </style>
+  </head>
+  <body>
+    <input id="js-load-button" type="button" value="load">
+    <div class="image-frame">
+      <img id="js-image-1" src="" width="" height="" alt="">
+      <img id="js-image-2" src="" width="" height="" alt="">
+    </div>
+
+    <script>
+      (function(){
+        'use strict';
+
+        var script, firstScript;
+
+        if (typeof Promise !== 'undefined') {
+          return;
+        }
+
+        script = document.createElement('script');
+        script.async = true;
+        script.src = 'es6-promise.min.js';
+
+        firstScript = document.getElementsByTagName('script')[0];
+        firstScript.parentNode.insertBefore(script, firstScript);
+      }());
+    </script>
+    <script src="index.js"></script>
+  </body>
+</html>
